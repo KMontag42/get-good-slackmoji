@@ -1,11 +1,10 @@
 GIT
-  remote: git://github.com/KMontag42/capistrano-puma.git
-  revision: ead8762718cb546f1a9c6a5c95a8a5935cabf758
+  remote: git://github.com/KMontag42/capybara-webkit.git
+  revision: 96b920dcb5a1a5cefa4389b3ace2c29ca944d234
   specs:
-    capistrano3-puma (2.0.0)
-      capistrano (~> 3.5)
-      capistrano-bundler
-      puma (~> 3.4)
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
+      json
 
 GEM
   remote: https://rubygems.org/
@@ -79,6 +78,9 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano3-puma (1.2.1)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -86,9 +88,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.11.1)
-      capybara (>= 2.3.0, < 2.8.0)
-      json
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -241,9 +240,9 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
-  capistrano3-puma!
+  capistrano3-puma
   capybara
-  capybara-webkit
+  capybara-webkit!
   coffee-rails (~> 4.2)
   devise
   font-awesome-rails

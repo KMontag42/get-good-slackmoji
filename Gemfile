@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'httparty'
 gem 'capybara'
-gem 'capybara-webkit'
+gem 'capybara-webkit', github: 'KMontag42/capybara-webkit'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'font-awesome-rails'
 
@@ -51,7 +51,7 @@ group :development do
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false, github: 'KMontag42/capistrano-puma'
+  gem 'capistrano3-puma',   require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
