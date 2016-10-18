@@ -1,0 +1,7 @@
+<div id="emoji">
+  <% @emoji.each do |key, val| %>
+    <div class="emote">
+      <img height="52.5" width="52.5" src="<%= val %>" alt="<%= key %>" data-clipboard-text=":<%= key %>:">
+    </div>
+  <% end %>
+</div>
