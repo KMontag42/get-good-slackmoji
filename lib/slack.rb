@@ -22,13 +22,16 @@ class Slack
       end
     end
 
+    puts "Going to sign in"
     session.visit("http://#{domain}.slack.com/customize/emoji")
     session.fill_in("email", with: email)
     session.fill_in("password", with: password)
     session.click_button("Sign in")
 
     emoji_hash.each do |text, url|
+      puts "doing upload"
       session.fill_in("name", with: text)
+      puts "after fill in"
       if url.start_with?("alias:")
         target = url.split(":")[1]
         puts "Aliasing :#{text}: to :#{target}:"
