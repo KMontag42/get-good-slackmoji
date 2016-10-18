@@ -7,6 +7,7 @@ end
 
 class Slack
   def upload_emoji(domain, email, password, emoji_hash)
+    puts 'making session'
     session = Capybara::Session.new(:webkit)
 
     puts "Importing #{emoji_hash.count} emoji"
