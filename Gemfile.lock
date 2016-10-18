@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/KMontag42/capybara-webkit.git
+  remote: https://github.com/KMontag42/capybara-webkit.git
   revision: 96b920dcb5a1a5cefa4389b3ace2c29ca944d234
   specs:
     capybara-webkit (1.11.1)
