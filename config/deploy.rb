@@ -43,6 +43,24 @@ namespace :puma do
     end
   end
 
+  desc 'Start puma'
+  task :start do
+    on roles (fetch(:puma_role)) do |role|
+      puma_switch_user(role) do
+        if test "[ -f #{fetch(:puma_conf)} ]"
+          info "using conf file #{fetch(:puma_conf)}"
+        else
+          invoke 'puma:config'
+        end
+        within current_path do
+          with rack_env: fetch(:puma_env) do
+            execute 'xvfb-run', "puma -C #{fetch(:puma_conf)} --daemon"
+          end
+        end
+      end
+    end
+  end
+
   before :start, :make_dirs
 end
 
