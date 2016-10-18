@@ -51,7 +51,7 @@ group :development do
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano3-puma',   require: false, github: 'KMontag42/capistrano-puma'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
