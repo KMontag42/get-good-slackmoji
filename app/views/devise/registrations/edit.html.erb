@@ -6,7 +6,7 @@
 
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: false, class: 'form-control' %>
-
+      <br>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
@@ -21,11 +21,10 @@
     <% end %>
 
     <br>
-    <br>
 
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-
+    <br>
     <%= f.label :slack_domain %> <br />
     <%= f.text_field :slack_domain, autofocus: true, class: 'form-control' %>
     <br>

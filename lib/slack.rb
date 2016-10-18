@@ -28,6 +28,11 @@ class Slack
     session.fill_in("password", with: password)
     session.click_button("Sign in")
 
+    if session.has_button?("Sign in")
+      # try clicking it again
+      session.click_button("Sign in")
+    end
+
     emoji_hash.each do |text, url|
       puts "doing upload"
       session.fill_in("name", with: text)
