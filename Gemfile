@@ -25,6 +25,14 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'httparty'
+gem 'capybara'
+gem 'capybara-webkit'
+gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'font-awesome-rails'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
