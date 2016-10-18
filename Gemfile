@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'httparty'
 gem 'capybara'
-gem 'capybara-webkit', git: 'https://github.com/KMontag42/capybara-webkit.git'
+gem 'capybara-webkit'#, git: 'https://github.com/KMontag42/capybara-webkit.git'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'font-awesome-rails'
 
