@@ -54,7 +54,7 @@ namespace :puma do
         end
         within current_path do
           with rack_env: fetch(:puma_env) do
-            execute 'xvfb-run', "bundle exec puma -C #{fetch(:puma_conf)} --daemon"
+            execute 'xvfb-run', "~/.rvm/bin/rvm default do bundle exec puma -C #{fetch(:puma_conf)} --daemon"
           end
         end
       end
