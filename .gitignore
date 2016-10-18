@@ -18,3 +18,6 @@
 
 .idea
 *.iml
+emoji_images/*.png
+emoji_images/*.gif
+emoji_images/*.jpeg
