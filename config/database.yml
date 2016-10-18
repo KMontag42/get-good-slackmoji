@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: emoji-transfer_production
-  username: emoji-transfer
-  password: <%= ENV['EMOJI-TRANSFER_DATABASE_PASSWORD'] %>
+  username: kyle
+  password: <%= ENV['EMOJI_TRANSFER_DATABASE_PASSWORD'] %>
