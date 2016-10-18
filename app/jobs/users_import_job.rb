@@ -1,7 +1,10 @@
+require 'slack'
+
 class UsersImportJob < ApplicationJob
   queue_as :default
 
-  def perform(user, image_url)
-    # this is where we do the code from the JS lib
+  def perform(domain, email, password, emoji)
+    # emoji looks like { emoji_name: URL }
+    Slack.new.upload_emoji domain, email, password, emoji
   end
 end

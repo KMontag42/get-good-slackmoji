@@ -1,27 +1,42 @@
 $(document).ready(function() {
-  var pickedImageUrl = '';
+  var pickedImageUrl = '',
+      pickedImageName = '';
 
   $('img').on('click', function(e) {
     pickedImageUrl = e.target.getAttribute('src');
+    pickedImageName = e.target.getAttribute('alt');
   });
 
   var clipboard = new Clipboard('.emote img');
   clipboard.on('success', function(e) {
     swal({
-      text: 'copied ' + e.text + ' to clipboard',
+      title: 'copied ' + e.text,
       imageUrl: e.trigger.getAttribute('src'),
       imageWidth: 105,
       confirmButtonText: 'Import',
-      cancelButtonText: 'Okay',
+      cancelButtonText: 'Close',
       showCancelButton: true
     }).then(function () {
-      $.ajax({
-        type: "POST",
-        url: "/api/import",
-        data: {
-          image_url: pickedImageUrl
-        }
-      });
+      swal({
+        text: 'input your slack password to import',
+        input: 'password',
+        imageUrl: e.trigger.getAttribute('src'),
+        imageWidth: 105,
+        confirmButtonText: 'Import',
+        cancelButtonText: 'Cancel',
+        showCancelButton: true
+      }).then(function(password) {
+        var emojiParam = {};
+        emojiParam[pickedImageName] = pickedImageUrl;
+        $.ajax({
+          type: "POST",
+          url: "/api/import",
+          data: {
+            password: password,
+            emoji: emojiParam
+          }
+        });
+      })
     });
   })
 });

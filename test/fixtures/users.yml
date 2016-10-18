@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  slack_domain           :string
+#  slack_username         :string
 #
 # Indexes
 #
