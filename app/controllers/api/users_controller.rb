@@ -1,3 +1,5 @@
+require 'slack'
+
 module Api
   class UsersController < ApplicationController
     before_action :authenticate_user!
@@ -8,10 +10,10 @@ module Api
           current_user.slack_username
 
       # fallback to account email if slack_username is nil
-      UsersImportJob.perform_later(current_user.slack_domain,
-                                   username,
-                                   params[:password],
-                                   params[:emoji].permit!.to_h)
+      Slack.new.upload_emoji(current_user.slack_domain,
+                             username,
+                             params[:password],
+                             params[:emoji].permit!.to_h)
       render json: {}
     end
 
