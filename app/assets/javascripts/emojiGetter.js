@@ -15,7 +15,8 @@ $(document).ready(function() {
       imageWidth: 105,
       confirmButtonText: 'Import',
       cancelButtonText: 'Close',
-      showCancelButton: true
+      showCancelButton: true,
+      showConfirmButton: e.trigger.getAttribute('data-show-import') == 'true'
     }).then(function () {
       swal({
         text: 'input your slack password to import',
