@@ -23,33 +23,8 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-      <a class="navbar-brand" href="/">Emoji</a>
-      <ul class="nav navbar-nav pull-xs-right">
-        <li class="nav-item">
-          <a class="nav-link" href="#" id="show-tutorial">How To</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to '<i class="fa fa-user"></i>'.html_safe, edit_registration_path(current_user), class: 'nav-link' if current_user %>
-          <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' unless current_user %>
-        </li>
-      </ul>
-    </nav>
-    <br>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-xs-10 offset-xs-1">
-        <% if flash[:notice] %>
-            <div class="alert alert-info"><%= notice %></div>
-        <% elsif flash[:alert] %>
-            <div class="alert alert-danger"><%= alert %></div>
-        <% elsif flash[:success] %>
-            <div class="alert alert-success"><%= flash[:success] %></div>
-        <% end %>
+      <div class="container-fluid">
+          <%= yield %>
       </div>
-    </div>
-
-    <%= yield %>
   </body>
 </html>
