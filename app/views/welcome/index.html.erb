@@ -1,15 +1,15 @@
 <h1>Get Good Games Emoji</h1>
 <h3>Newest are first</h3>
 <div id="emoji">
-    <% @emoji.reverse_each do |key, val| %>
-        <div class="emote">
-            <img download="<%= key %>.png"
-                 height="60"
-                 width="60"
-                 src="<%= val %>"
-                 alt="<%= key %>"
-                 data-clipboard-text=":<%= key %>:"
-                 data-show-import="false">
-        </div>
-    <% end %>
+  <% @emoji.each do |key, val| %>
+    <div class="emote">
+      <img download="<%= key %>.png"
+        height="60"
+        width="60"
+        src="<%= val %>"
+        alt="<%= key %>"
+        data-clipboard-text=":<%= key %>:"
+        data-show-import="false">
+    </div>
+  <% end %>
 </div>

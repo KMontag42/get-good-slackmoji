@@ -24,6 +24,8 @@ gem 'turbolinks', '~> 5'
 gem 'httparty'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 
+gem 'kaminari'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
