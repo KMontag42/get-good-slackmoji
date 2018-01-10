@@ -2,7 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #emoji {
+  @extend .clearfix;
+  margin-top: 1em;
+
   .emote {
-    display: inline-block;
+    display: block;
+    height: 60px;
+    width: 60px;
+    float: left;
+    overflow: hidden;
+    margin: 2px;
   }
 }

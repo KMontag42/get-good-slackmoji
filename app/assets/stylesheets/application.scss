@@ -1,2 +1,8 @@
-@import "bootstrap";
+@import 'bootstrap';
+@import 'font-awesome';
 @import 'welcome';
+
+html, body {
+  background: #1d1a16;
+  color: #a9a7a6;
+}

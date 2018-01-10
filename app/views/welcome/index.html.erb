@@ -1,15 +1,22 @@
-<h1>Get Good Games Emoji</h1>
-<h3>Newest are first</h3>
-<div id="emoji">
-  <% @emoji.each do |key, val| %>
-    <div class="emote">
-      <img download="<%= key %>.png"
-        height="60"
-        width="60"
-        src="<%= val %>"
-        alt="<%= key %>"
-        data-clipboard-text=":<%= key %>:"
-        data-show-import="false">
-    </div>
-  <% end %>
+<h1>
+  <%= link_to 'Get Good Games Emoji', root_path, class: 'd-none d-sm-inline' %>
+  <%= link_to 'GGG', root_path, class: 'd-inline d-sm-none' %>
+  <span class="h3 d-none d-md-inline"> - Newest are first</span>
+</h1>
+
+<%= form_tag(root_path, method: :get, class: 'form-inline') do %>
+  <%= text_field_tag :q, params[:q], class: 'form-control'  %>
+  <%= submit_tag 'Search', class: 'form-control btn-primary', name: nil %>
+<% end %>
+
+<div id="emoji" class="infinite-scroll">
+  <%= render partial: 'emoji_list', object: @emoji %>
+</div>
+
+<div class="pagination invisible">
+  <%= link_to_next_page(@emoji, 'Load More', remote: true) unless @emoji.last_page? %>
+</div>
+
+<div class="loading text-center <%= 'invisible' if @emoji.last_page? %>">
+  <%= fa_icon :spinner, class: 'fa-5x fa-spin' %>
 </div>

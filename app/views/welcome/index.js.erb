@@ -1,0 +1,11 @@
+$("<%=j render(:partial => 'emoji_list', :object => @emoji) %>")
+  .appendTo($("#emoji"));
+
+// Update pagination link
+<% if @emoji.last_page? %>
+$('.pagination').html("");
+$(".loading").addClass("invisible");
+<% else %>
+$('.pagination')
+  .html("<%=j link_to_next_page(@emoji, 'Load More', :remote => true) %>");
+<% end %>

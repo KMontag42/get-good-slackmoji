@@ -1,0 +1,3 @@
+<% @emoji.each do |key, val| %>
+  <%= render partial: 'emoji', locals: { key: key, val: val } unless val.include? 'alias:' %>
+<% end %>
