@@ -224,15 +224,15 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
-  coffee-rails (~> 4.2)
+  coffee-rails
   font-awesome-rails
   httparty
   jquery-infinite-pages
   jquery-rails
   kaminari
   listen (~> 3.0.5)
-  pg (~> 0.18)
-  puma (~> 3.0)
+  pg
+  puma
   rails (~> 5.1)
   rails-assets-tether (>= 1.1.0)!
   sass-rails (~> 5.0)
