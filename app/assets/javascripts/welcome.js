@@ -1,11 +1,14 @@
 $(".welcome.index").ready(function(event) {
   setupPage();
-  $(window).on("scroll", e => {
-    if (isElementInViewport(document.getElementsByClassName("pagination"))) {
-      $("a[rel=next]").click();
-    }
-  });
+  $(window).on("scroll", loadNextPage);
 });
+
+const loadNextPage = _.debounce(e => {
+  if (isElementInViewport(document.getElementsByClassName("pagination"))) {
+    console.log("yoyo");
+    $("a[rel=next]").click();
+  }
+}, 250);
 
 const setupPage = () => {
   if (isElementInViewport(document.getElementsByClassName("pagination"))) {
@@ -13,5 +16,7 @@ const setupPage = () => {
       $("a[rel=next]").click();
       setTimeout(setupPage, 100);
     }, 250);
+  } else {
+    $(".loading").removeClass("invisible");
   }
 };

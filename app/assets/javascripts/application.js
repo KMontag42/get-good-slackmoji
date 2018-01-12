@@ -15,4 +15,5 @@
 //= require tether
 //= require bootstrap
 //= require jquery.infinite-pages
+//= require underscore-min
 //= require_tree .

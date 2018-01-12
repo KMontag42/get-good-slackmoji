@@ -17,6 +17,8 @@
   <%= link_to_next_page(@emoji, 'Load More', remote: true) unless @emoji.last_page? %>
 </div>
 
-<div class="loading text-center <%= 'invisible' if @emoji.last_page? %>">
-  <%= fa_icon :spinner, class: 'fa-5x fa-spin' %>
+<div class="loading text-center invisible">
+  <p>
+    Scroll down for more!
+  </p>
 </div>
