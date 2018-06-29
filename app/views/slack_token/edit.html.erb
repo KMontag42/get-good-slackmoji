@@ -6,6 +6,10 @@
             <%= f.label :token %>
             <%= f.text_field :token, class: 'form-control', value: @token %>
             <small class="form-text text-muted">Your Slack Token is only stored in a cookie in your browser, we do not persist the value in a database.</small>
+            <small class="form-text text-muted">
+                You can find your token
+                <a href="https://api.slack.com/custom-integrations/legacy-tokens#" target="_blank">here</a>
+            </small>
         </div>
         <%= f.submit :update, class: 'btn btn-primary' %>
     <% end %>
