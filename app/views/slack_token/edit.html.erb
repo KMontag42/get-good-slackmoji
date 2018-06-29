@@ -1,0 +1,12 @@
+<h1>SlackToken</h1>
+
+<div class="container">
+    <%= form_with url: slack_token_save_path do |f| %>
+        <div class="form-group">
+            <%= f.label :token %>
+            <%= f.text_field :token, class: 'form-control', value: @token %>
+            <small class="form-text text-muted">Your Slack Token is only stored in a cookie in your browser, we do not persist the value in a database.</small>
+        </div>
+        <%= f.submit :update, class: 'btn btn-primary' %>
+    <% end %>
+</div>
