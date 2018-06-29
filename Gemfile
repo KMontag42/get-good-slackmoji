@@ -28,6 +28,8 @@ gem 'jquery-infinite-pages'
 gem 'font-awesome-rails'
 
 gem 'lograge'
+gem 'dalli'
+gem 'memcachier'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
