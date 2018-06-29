@@ -7,7 +7,14 @@ class Emoji
   base_uri 'https://slack.com/api'
 
   def self.get_emoji(token, query = false)
-    new.get_emoji(token, query)
+    cache_key = "#{token}"
+
+    cache_key += "/#{query}" if query
+
+    Rails.cache.fetch(cache_key, expires_in: 24.hours) do
+      Rails.logger.debug('cache key not hit')
+      new.get_emoji(token, query)
+    end
   end
 
   def get_emoji(token, query = false)

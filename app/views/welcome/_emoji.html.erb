@@ -1,9 +1,11 @@
-<span class="emote">
-  <img download="<%= key %>.png"
-    height="60"
-    width="60"
-    src="<%= val %>"
-    alt="<%= key %>"
-    data-clipboard-text=":<%= key %>:"
-    data-show-import="false" />
-</span>
+<% cache key do %>
+    <span class="emote">
+        <img download="<%= key %>.png"
+             height="60"
+             width="60"
+             src="<%= val %>"
+             alt="<%= key %>"
+             data-clipboard-text=":<%= key %>:"
+             data-show-import="false" />
+    </span>
+<% end %>

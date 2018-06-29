@@ -25,6 +25,12 @@
 
   <body class="<%= controller_name %> <%= action_name %>">
       <div class="container-fluid">
+          <h1>
+              <%= link_to 'Slackmoji Explorer', root_path, class: 'd-none d-sm-inline' %>
+              <%= link_to 'SE', root_path, class: 'd-inline d-sm-none' %>
+              <%= link_to fa_icon("gear"), :slack_token, class: 'd-inline float-right' %>
+          </h1>
+
           <%= yield %>
       </div>
   </body>

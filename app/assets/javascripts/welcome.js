@@ -1,9 +1,9 @@
 $(".welcome.index").ready(function(event) {
   setupPage();
-  $(window).on("scroll", loadNextPage);
+  $(window).on("scroll", debouncedLoadNextPage);
 });
 
-const loadNextPage = _.debounce(e => {
+const loadNextPage = _.throttle(e => {
   if (isElementInViewport(document.getElementsByClassName("pagination"))) {
     console.log("yoyo");
     $("a[rel=next]").click();
@@ -11,12 +11,14 @@ const loadNextPage = _.debounce(e => {
 }, 250);
 
 const setupPage = () => {
+  console.log("setupPage called");
   if (isElementInViewport(document.getElementsByClassName("pagination"))) {
-    setTimeout(() => {
-      $("a[rel=next]").click();
-      setTimeout(setupPage, 100);
-    }, 250);
+    $("a[rel=next]").click();
+    debouncedSetup();
   } else {
     $(".loading").removeClass("invisible");
   }
 };
+
+const debouncedSetup = _.debounce(setupPage, 420);
+const debouncedLoadNextPage = _.debounce(loadNextPage, 420);

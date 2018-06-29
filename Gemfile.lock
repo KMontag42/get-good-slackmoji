@@ -76,6 +76,7 @@ GEM
       capistrano (~> 3.7)
       capistrano-bundler
       puma (~> 3.4)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -120,6 +121,11 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    lograge (0.10.0)
+      actionpack (>= 4)
+      activesupport (>= 4)
+      railties (>= 4)
+      request_store (~> 1.0)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -141,6 +147,9 @@ GEM
       mini_portile2 (~> 2.3.0)
     pg (1.0.0)
     popper_js (1.12.9)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     puma (3.11.4)
     rack (2.0.5)
     rack-test (1.0.0)
@@ -175,6 +184,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     ref (2.0.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -242,7 +253,9 @@ DEPENDENCIES
   jquery-rails
   kaminari
   listen (~> 3.0.5)
+  lograge
   pg
+  pry
   puma
   rails (~> 5.1)
   rails-assets-tether (>= 1.1.0)!

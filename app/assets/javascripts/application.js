@@ -16,5 +16,4 @@
 //= require bootstrap
 //= require jquery.infinite-pages
 //= require underscore-min
-//= require turbolinks
 //= require_tree .

@@ -1,24 +1,24 @@
-<h1>
-  <%= link_to 'Slackmoji Explorer', root_path, class: 'd-none d-sm-inline' %>
-  <%= link_to 'SE', root_path, class: 'd-inline d-sm-none' %>
-  <span class="h3 d-none d-md-inline"> - Newest are first</span>
-</h1>
+<% if @token.blank? %>
+    <h3>You will need to set your Slack Token <%= link_to 'here', :slack_token_edit %></h3>
+<% else %>
+    <h3>Newest are first</h3>
 
-<%= form_tag(root_path, method: :get, class: 'form-inline') do %>
-  <%= text_field_tag :q, params[:q], class: 'form-control'  %>
-  <%= submit_tag 'Search', class: 'form-control btn-primary', name: nil %>
+    <%= form_tag(root_path, method: :get, class: 'form-inline') do %>
+        <%= text_field_tag :q, params[:q], class: 'form-control'  %>
+        <%= submit_tag 'Search', class: 'form-control btn-primary', name: nil %>
+    <% end %>
+
+    <div id="emoji" class="infinite-scroll">
+        <%= render partial: 'emoji_list', object: @emoji, cached: true %>
+    </div>
+
+    <div class="pagination invisible">
+        <%= link_to_next_page(@emoji, 'Load More', remote: true) unless @emoji.last_page? %>
+    </div>
+
+    <div class="loading text-center invisible">
+        <p>
+            Scroll down for more!
+        </p>
+    </div>
 <% end %>
-
-<div id="emoji" class="infinite-scroll">
-  <%= render partial: 'emoji_list', object: @emoji %>
-</div>
-
-<div class="pagination invisible">
-  <%= link_to_next_page(@emoji, 'Load More', remote: true) unless @emoji.last_page? %>
-</div>
-
-<div class="loading text-center invisible">
-  <p>
-    Scroll down for more!
-  </p>
-</div>

@@ -1,7 +1,7 @@
 module Slack
   module Token
     def current_token
-      session[:slack_token] || ENV.fetch('SLACK_TOKEN', '')
+      session.fetch(:slack_token, '')
     end
 
     def set_session_token(val)
