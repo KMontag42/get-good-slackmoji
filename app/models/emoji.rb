@@ -11,6 +11,8 @@ class Emoji
 
     cache_key += "/#{query}" if query
 
+    return [] if cache_key.blank?
+
     Rails.cache.fetch(cache_key, expires_in: 24.hours) do
       Rails.logger.debug('cache key not hit')
       new.get_emoji(token, query)
